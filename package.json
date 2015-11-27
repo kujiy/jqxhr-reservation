@@ -1,0 +1,19 @@
+{
+  "name": "jqxhr-reservation",
+  "version": "1.0.0",
+  "description": "Reserve your ajax requests and reduce requests.",
+  "main": "sample/sample.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kujiy/jqxhr-reservation.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-uglify": "^0.11.0"
+  }
+}

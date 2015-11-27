@@ -1,0 +1,21 @@
+﻿# git
+*.diff
+
+# node
+node_modules
+Gruntfile.js
+html/include/bower*
+
+# php
+vendor
+composer.lock
+
+# windows
+*コピー*
+
+# others
+*.sublime*
+*.zip
+
+# logs
+/**/*.log

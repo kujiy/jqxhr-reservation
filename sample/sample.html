@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
+<title>jqxhr-reservation-gitlab\sample</title>
+
+<!-- Google jQuery -->
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<!-- library -->
+<script src="../src/jqxhr-reservation.js"></script>
+
+
+</head>
+<body>
+
+<!--
+////////////////////////////////////////////////////////
+///   [1] 　Basic Use
+////////////////////////////////////////////////////////
+-->
+
+<h1>[1] Basic Use</h1>
+<div id="use1"></div>
+<script>
+
+// a box of reservation
+var jqxhrReservation = new jqxhrReservation_company();
+
+// a function for reservations
+function my_process(str) {
+
+    var url = "https://raw.githubusercontent.com/hodade/jquery-clear-button/master/bower.json"
+    jqxhrReservation.jqxhr = $.ajax({
+                                        type: 'GET',
+                                        url: url
+                            }).done( function() {
+                            }).fail( function() {
+                            }).always( function() {
+                                jqxhrReservation.finish(); // Notify the request finished [Necesarry]
+    }); //jqxhr
+
+    $("#use1").append("<hr>my_process called -> "+ str);
+    return str;
+}
+
+// Reserve functions
+jqxhrReservation.add(
+    my_process, ["hoge"] ,{} // This request will be canceled due to the next request.
+);
+jqxhrReservation.add(
+    my_process, ["hage"] ,{} // This request will be canceled due to the next request.
+);
+jqxhrReservation.add(
+    my_process, ["hige"] ,{} // This request will be canceled due to the next request.
+);
+jqxhrReservation.add(
+    my_process, ["huge"] ,{} // This request will be fired.
+);
+
+
+
+</script>
+
+
+<!--
+////////////////////////////////////////////////////////
+///　[2] Cool uses
+////////////////////////////////////////////////////////
+-->
+
+
+<h1>[2] Cool uses</h1>
+<div id="use2">
+<h2>
+delay & callback
+</h2>
+</div>
+<script>
+
+// A function for reservation
+function my_process2(str) {
+
+    var url = "https://raw.githubusercontent.com/hodade/jquery-clear-button/master/bower.json"
+    jqxhrReservation.jqxhr = $.ajax({
+                                        type: 'GET',
+                                        url: url
+                            }).done( function() {
+                            }).fail( function() {
+                            }).always( function() {
+                                jqxhrReservation.finish(); // Notify the request finished [Necesarry]
+    }); //jqxhr
+
+    $("#use2").append("<hr>my_process2 called -> "+ str);
+    return str;
+}
+
+
+// GroupB
+var jqxhr_group_b = new jqxhrReservation_company();
+jqxhr_group_b.add(
+    my_process2, ["group_b"] ,{} // Certenly be executed due to different instance
+);
+
+// GroupC （５秒おきモードで実行）
+var jqxhr_group_c = new jqxhrReservation_company(
+    { "delay" : 5000 }
+);
+jqxhr_group_c.add(
+    my_process2, ["group_c with delay"] ,{} // Certenly be executed due to different instance
+);
+
+// GroupD
+var jqxhr_group_d = new jqxhrReservation_company();
+jqxhr_group_d.add(
+    my_process2, ["group_d with callback"] ,{
+            callback: function(result) {
+                $("#use2").append("<hr>callback_d fired.");
+            },
+            callback_failed: function(result) {
+                $("#use2").append("<hr>callback_failed fired.");
+            }
+    }
+);
+</script>
+
+
+
+
+
+
+
+
+<!--
+////////////////////////////////////////////////////////
+///　[3] Immediate function
+////////////////////////////////////////////////////////
+-->
+
+<h1>[3] Immediate function</h1>
+<div id="use3">
+</div>
+<script>
+
+// A function for reservation
+
+// Group
+var jqxhr_group_e = new jqxhrReservation_company();
+jqxhr_group_e.add(
+    (function(){
+        $("#use3").html("Immediate function fired.");
+    }())
+    ,    []
+    ,    {}
+);
+
+</script>
