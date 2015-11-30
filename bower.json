@@ -1,0 +1,25 @@
+{
+  "name": "jqxhr-reservation",
+  "version": "1.0.0",
+  "homepage": "https://github.com/kujiy/jqxhr-reservation",
+  "authors": [
+    "kujiy <kuji.mobile@gmail.com>"
+  ],
+  "description": "Reserve your ajax requests then fire while ajax are free.",
+  "main": "jqxhr-reservation.min.js",
+  "keywords": [
+    "jquery",
+    "ajax",
+    "xhr",
+    "jqxhr",
+    "reserv"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

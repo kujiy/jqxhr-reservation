@@ -30,6 +30,12 @@ o first in, last out
 
 ![](https://raw.githubusercontent.com/kujiy/jqxhr-reservation/master/sample/1127-01.png)
 
+## Install
+
+```bash
+$ bower i jqxhr-reservation
+```
+
 ## import
 
 ```html
@@ -167,7 +173,7 @@ jqxhrReservation.add(
 
 ## Want more
 If you want more features, try this.  
-(Reactive-Extensions/RxJS)[https://github.com/Reactive-Extensions/RxJS]
+(https://github.com/Reactive-Extensions/RxJS)[Reactive-Extensions/RxJS]
 
 
 
