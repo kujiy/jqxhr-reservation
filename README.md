@@ -173,7 +173,7 @@ jqxhrReservation.add(
 
 ## Want more
 If you want more features, try this.  
-(https://github.com/Reactive-Extensions/RxJS)[Reactive-Extensions/RxJS]
+[Reactive-Extensions/RxJS](https://github.com/Reactive-Extensions/RxJS)
 
 
 
