@@ -1,10 +1,11 @@
-# jqxhr-reservation.js
+# jqxhr-reservation.js 
+jQuery XHR reservation  
 Japanese readme is here.[日本語のreadmeはこちら](./README_ja.md)
 
-## Reduce your ajax requests. Execute just the last ajax request.
+### Reduce your ajax requests and execute just the last one.
 - All ajax requests should be reserved.
 - The latest reservation will overwrite previous reservation.
-- A reservation will be executed when there is no working ajax.
+- Any reservation will be executed when there is no working ajax.
 - Callback after execute a reservation.
 - Make reservation groups with each instance.(Overwriting reservation effects only each group)
 
